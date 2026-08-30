@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
-
+import os
 app = Flask(__name__)
 
 # Load trained CIFAR-10 model
