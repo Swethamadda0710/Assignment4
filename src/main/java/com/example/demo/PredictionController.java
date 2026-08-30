@@ -20,6 +20,7 @@ public class PredictionController {
     public PredictionResponse predict(@RequestParam("image") MultipartFile image)
             throws IOException {
 
+        // Save uploaded image temporarily
         File tempFile = File.createTempFile("upload", image.getOriginalFilename());
         image.transferTo(tempFile);
 
@@ -34,12 +35,14 @@ public class PredictionController {
         HttpEntity<MultiValueMap<String, Object>> requestEntity =
                 new HttpEntity<>(body, headers);
 
+        // Call Flask API deployed on Render
         ResponseEntity<PredictionResponse> response =
                 restTemplate.postForEntity(
-                		"https://assignment4-cifar10.onrender.com/predict",
+                        "https://assignment4-1z9q.onrender.com/predict",
                         requestEntity,
                         PredictionResponse.class);
 
+        // Delete temporary file
         tempFile.delete();
 
         return response.getBody();
