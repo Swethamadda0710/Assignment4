@@ -36,7 +36,7 @@ public class PredictionController {
 
         ResponseEntity<PredictionResponse> response =
                 restTemplate.postForEntity(
-                        "http://localhost:5001/predict",
+                		"https://assignment4-cifar10.onrender.com/predict",
                         requestEntity,
                         PredictionResponse.class);
 
