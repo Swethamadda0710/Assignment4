@@ -1,5 +1,0 @@
-services:
-  - type: web
-    name: assignment4
-    env: docker
-    plan: free
