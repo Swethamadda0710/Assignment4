@@ -6,8 +6,7 @@ import os
 app = Flask(__name__)
 
 # Load trained CIFAR-10 model
-model = load_model("cifar10_model.keras")
-
+model = load_model("cifar10_model.keras", compile=False)
 labels = [
     "airplane",
     "automobile",
