@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CIFAR-10 Image Classifier</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <h1>🧠 AI Image Classification</h1>
+
+    <p class="subtitle">
+        Classify images into one of the 10 CIFAR-10 categories using Deep Learning.
+    </p>
+
+    <div class="upload-card">
+
+        <form id="uploadForm" enctype="multipart/form-data">
+
+            <label for="imageInput" class="upload-box">
+
+                <img id="preview"
+                     src="https://cdn-icons-png.flaticon.com/512/685/685655.png">
+
+                <p>Click here to upload an image</p>
+
+                <input type="file"
+                       id="imageInput"
+                       accept="image/*"
+                       hidden>
+
+            </label>
+
+            <button type="button" id="predictBtn">
+                Predict Image
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="result-card">
+
+        <h2>Prediction Result</h2>
+
+        <div id="loading" class="loading">
+            Predicting...
+        </div>
+
+        <div id="result">
+            Upload an image and click Predict.
+        </div>
+
+    </div>
+
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>
